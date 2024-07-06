@@ -184,13 +184,11 @@
 ;; |Functions for interacting with `flix.jar'|
 ;; +-----------------------------------------+
 
-(require 'project)
-
 ;;;###autoload
 (defun +flix/install-jar ()
   "Install flix.jar in a selected directory if it is not already present."
   (interactive)
-  (let* ((default-directory (or (project-root) default-directory))
+  (let* ((default-directory (or default-directory))
          (selected-dir (read-directory-name "Install into directory: " default-directory))
          (jar-path (concat (file-name-as-directory selected-dir) "flix.jar"))
          (download-url "https://github.com/flix/flix/releases/latest/download/flix.jar"))
@@ -204,7 +202,7 @@
 (defun +flix/flix-command ()
   "Run a command with the flix.jar in the specified directory."
   (interactive)
-  (let* ((default-directory (or (project-root) flix-jar-directory default-directory))
+  (let* ((default-directory (or flix-jar-directory default-directory))
          (selected-dir (read-directory-name "init project in: " default-directory))
          (command (read-string "Command: "))
          (jar-path (concat (file-name-as-directory selected-dir) "flix.jar")))
@@ -219,7 +217,7 @@
 (defun +flix/init-project ()
   "Initialize a flix project in the selected directory if flix.jar is present."
   (interactive)
-  (let* ((default-directory (or (project-root) flix-jar-directory default-directory))
+  (let* ((default-directory (or flix-jar-directory default-directory))
          (selected-dir (read-directory-name "init project in: " default-directory))
          (jar-path (concat (file-name-as-directory selected-dir) "flix.jar")))
     (if (file-exists-p jar-path)
@@ -233,7 +231,7 @@
 (defun +flix/run-project ()
   "Initialize a Flix project in the selected directory if flix.jar is present."
   (interactive)
-  (let* ((default-directory (or (project-root) flix-jar-directory default-directory))
+  (let* ((default-directory (or flix-jar-directory default-directory))
          (selected-dir (read-directory-name "Flix exe: " default-directory))
          (jar-path (concat (file-name-as-directory selected-dir) "flix.jar")))
     (if (file-exists-p jar-path)
@@ -247,7 +245,7 @@
 (defun +flix/build-project ()
   "Initialize a Flix project in the selected directory if flix.jar is present."
   (interactive)
-  (let* ((default-directory (or (project-root) flix-jar-directory default-directory))
+  (let* ((default-directory (or flix-jar-directory default-directory))
          (selected-dir (read-directory-name "Flix exe: " default-directory))
          (jar-path (concat (file-name-as-directory selected-dir) "flix.jar")))
     (if (file-exists-p jar-path)
@@ -292,8 +290,7 @@
 (defun +flix/set-jar-directory ()
   "Set the directory where flix.jar is located."
   (interactive)
-  (let* ((default-directory (or (project-root) flix-jar-directory default-directory))
-         (selected-dir (read-directory-name "Flix exe: " default-directory)))
+  (let ((selected-dir (read-directory-name "Flix exe: " default-directory)))
     (setq flix-jar-directory selected-dir)))
 
 ;;;###autoload
