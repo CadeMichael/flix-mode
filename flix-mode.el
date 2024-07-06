@@ -7,10 +7,10 @@
 
 ;;; Commentary:
 
-;; Flix mode for syntax highlighting, interacting with `flix.jar`, and flix repl
+;; Flix mode for syntax highlighting, interacting with `flix.jar', and flix repl
 ;; interopt.  There is a flix-mode that has been archived, but provided all but one
 ;; line of the code used for syntax highlighting in this package.  The repo cane be
-;; found at https://github.com/jhckragh/flix-mode, and it's author deserves props.
+;; found at https://github.com/jhckragh/flix-mode, and its author deserves props.
 
 ;; This package differs in that it allows users to interact with the `flix.jar' needed
 ;; in every flix project.  It provides functions for downloading, intializing, running,
