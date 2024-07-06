@@ -1,8 +1,36 @@
 #+TITLE: Flix Mode
 
 * Overview
+- provides a flix-mode for interacting with flix source code. It provides
+  - syntax highlighting
+  - funcitons for interacting with *flix.jar*, including downloading it.
+  - repl integrations
 
 * Installation
+- this package can be installed with straight using its git repo
 
 * Commands
 
+|-------------------------+-----------------------------------------|
+| +flix/install-jar       | install flix.jar in specified directory |
+|-------------------------+-----------------------------------------|
+| +flix/flix-command      | pass a command to flix.jar              |
+|-------------------------+-----------------------------------------|
+| +flix/init-project      | initialize a flix project               |
+|-------------------------+-----------------------------------------|
+| +flix/run-project       | run a flix project                      |
+|-------------------------+-----------------------------------------|
+| +flix/build-project     | build  fix project                      |
+|-------------------------+-----------------------------------------|
+| +flix/repl              | create a flix repl                      |
+|-------------------------+-----------------------------------------|
+| +flix/goto-flix-buffer  | go to flix buffer that called repl last |
+|-------------------------+-----------------------------------------|
+| +flix/goto-repl         | go to flix repl                         |
+|-------------------------+-----------------------------------------|
+| +flix/repl-restart      | restart flix repl                       |
+|-------------------------+-----------------------------------------|
+| +flix/set-jar-directory | set the directory flix.jar resides in   |
+|-------------------------+-----------------------------------------|
+| +flix/send-line-to-repl | send line to flix repl                  |
+|-------------------------+-----------------------------------------|
