@@ -188,7 +188,7 @@
 (defun +flix/install-jar ()
   "Install flix.jar in a selected directory if it is not already present."
   (interactive)
-  (let* ((default-directory (or default-directory))
+  (let* ((default-directory (or flix-jar-directory default-directory))
          (selected-dir (read-directory-name "Install into directory: " default-directory))
          (jar-path (concat (file-name-as-directory selected-dir) "flix.jar"))
          (download-url "https://github.com/flix/flix/releases/latest/download/flix.jar"))
