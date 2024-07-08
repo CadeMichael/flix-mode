@@ -46,6 +46,7 @@
     ("let\\*?[ \t]+\\([_[:lower:]][_[:alnum:]]*\\)" (1 font-lock-variable-name-face))
     ("\\_<\\([_[:lower:]][_[:alnum:]]*\\)[ \t]*:[ \t_[:upper:]]" (1 font-lock-variable-name-face))
     ("\\_<\\([_[:upper:]][_[:alnum:]]*\\)\\_>" (0 font-lock-type-face))
+    ("\\b[0-9]+\\b" (0 font-lock-constant-face))
     (,(concat "\\_<" (regexp-opt flix-mode-keywords) "\\_>") (0 font-lock-keyword-face)))
   "Keyword highlighting for `flix-mode'.")
 
